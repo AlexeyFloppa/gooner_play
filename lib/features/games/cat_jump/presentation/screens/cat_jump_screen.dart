@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import '../home/widgets/game_enable_container.dart';
+import '../../../../../shared/widgets/game_enable_container.dart';
 
 class CatJumpScreen extends StatelessWidget {
   const CatJumpScreen({super.key});

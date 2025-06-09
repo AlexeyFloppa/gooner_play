@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gooner_play/features/home/widgets/game_button.dart';
+import 'package:gooner_play/features/home/presentation/widgets/game_button.dart';
 import 'package:gooner_play/core/routes/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -66,8 +66,19 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     GameButton(
                       accentColor: Theme.of(context).colorScheme.primary,
+                      title: 'Idle Games',
+                      icon: Icon(Icons.smart_toy,
+                          color: Theme.of(context).colorScheme.onPrimary),
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.idleGamesScreen);
+                      },
+                    ),
+                    const SizedBox(height: 10),
+                    GameButton(
+                      accentColor: Theme.of(context).colorScheme.primary,
                       title: 'Cat Jump',
-                      icon: Icon(Icons.pets, color: Theme.of(context).colorScheme.onPrimary),
+                      icon: Icon(Icons.pets,
+                          color: Theme.of(context).colorScheme.onPrimary),
                       onTap: () {
                         Navigator.pushNamed(context, AppRoutes.catJumpScreen);
                       },
@@ -76,14 +87,16 @@ class HomeScreen extends StatelessWidget {
                     GameButton(
                       accentColor: Theme.of(context).colorScheme.secondary,
                       title: 'Chess AI',
-                      icon: Icon(Icons.check, color: Theme.of(context).colorScheme.onSecondary),
+                      icon: Icon(Icons.check,
+                          color: Theme.of(context).colorScheme.onSecondary),
                       onTap: null, // No navigation, will log debug message
                     ),
                     const SizedBox(height: 10),
                     GameButton(
                       accentColor: Theme.of(context).colorScheme.tertiary,
                       title: 'Tic Tac Toe',
-                      icon: Icon(Icons.grid_on, color: Theme.of(context).colorScheme.onTertiary),
+                      icon: Icon(Icons.grid_on,
+                          color: Theme.of(context).colorScheme.onTertiary),
                       onTap: null, // No navigation, will log debug message
                     ),
                   ],

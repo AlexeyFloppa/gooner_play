@@ -28,7 +28,7 @@ class _GameEnableContainerState extends State<GameEnableContainer> {
         Container(
           padding: EdgeInsets.all(16.0),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.surfaceContainer,
             borderRadius: BorderRadius.circular(8.0),
             boxShadow: [
               BoxShadow(

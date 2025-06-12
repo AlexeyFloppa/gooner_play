@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_overlay_window/flutter_overlay_window.dart';
+import 'package:system_alert_window/system_alert_window.dart';
 import 'package:gooner_play/shared/widgets/permission_status_container.dart';
 import 'package:gooner_play/shared/widgets/game_enable_container.dart';
 
@@ -53,7 +53,7 @@ class _PermissionScreenLayoutState extends State<PermissionScreenLayout>
   }
 
   Future<void> _checkPermissions() async {
-    final layout = await FlutterOverlayWindow.isPermissionGranted();
+    final layout = await SystemAlertWindow.checkPermissions;
     setState(() {
       _layoutPermission = layout;
     });

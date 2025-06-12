@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter_overlay_window/flutter_overlay_window.dart';
+import 'package:system_alert_window/system_alert_window.dart';
 import '../../../../../shared/widgets/game_enable_container.dart';
 import '../../overlay_window.dart';
 import '../../../../../shared/widgets/permission_screen_layout.dart';
@@ -22,9 +22,9 @@ class IdleGamesScreen extends StatelessWidget {
           title: 'Idle Games AI Model',
           onEnable: () async {
             log("Enabled");
-            if (!await FlutterOverlayWindow.isPermissionGranted()) {
+            if (!await SystemAlertWindow.checkPermissions) {
               log("Requesting permission for overlay");
-              await FlutterOverlayWindow.requestPermission();
+              await SystemAlertWindow.requestPermissions();
             }
             await OverlayControls.show();
             log("Not Requesting permission for overlay");

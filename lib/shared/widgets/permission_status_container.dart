@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_overlay_window/flutter_overlay_window.dart';
+import 'package:system_alert_window/system_alert_window.dart';
 
 class PermissionStatusContainer extends StatefulWidget {
   const PermissionStatusContainer({super.key});
@@ -36,7 +36,7 @@ class _PermissionStatusContainerState extends State<PermissionStatusContainer>
   }
 
   Future<void> _checkPermissions() async {
-    final overlay = await FlutterOverlayWindow.isPermissionGranted();
+    final overlay = await SystemAlertWindow.checkPermissions;
     setState(() {
       _overlayPermission = overlay;
     });
@@ -48,7 +48,7 @@ class _PermissionStatusContainerState extends State<PermissionStatusContainer>
       );
 
   Future<void> _openOverlayPermissionSettings() async {
-    await FlutterOverlayWindow.requestPermission();
+    await SystemAlertWindow.requestPermissions();
     await _checkPermissions();
   }
 

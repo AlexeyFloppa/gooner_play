@@ -1,18 +1,22 @@
-import 'package:flutter_overlay_window/flutter_overlay_window.dart';
+import 'package:system_alert_window/system_alert_window.dart';
 
 class OverlayControls {
   static Future<void> show() async {
-    await FlutterOverlayWindow.showOverlay(
+    await SystemAlertWindow.showSystemWindow(
       height: 300,
       width: 300,
-      alignment: OverlayAlignment.center,
-      flag: OverlayFlag.defaultFlag,
-      overlayTitle: "Script Controls",
-      overlayContent: "Control your script",
+      header: SystemWindowHeader(title: SystemWindowText(text: "Script Controls")),
+      body: SystemWindowBody(
+        rows: [
+          EachRow(columns: [
+            EachColumn(text: SystemWindowText(text: "Control your script"))
+          ])
+        ],
+      ),
     );
   }
 
   static Future<void> hide() async {
-    await FlutterOverlayWindow.closeOverlay();
+    await SystemAlertWindow.closeSystemWindow();
   }
 }

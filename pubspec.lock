@@ -126,14 +126,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.0"
-  flutter_overlay_window:
+  system_alert_window:
     dependency: "direct main"
     description:
-      name: flutter_overlay_window
-      sha256: "17988420249da68e421d1b44b511e6113d3de7a9e52c3fbd6d99730508af4580"
+      name: system_alert_window
+      sha256: ""
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.0"
+    version: "2.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
